@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+
+<GridPane   fx:id="root" prefHeight="550.0" prefWidth="500.0" 
+            alignment="CENTER" hgap="10" vgap="10"    
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="lab4.FXMLController">
+    <padding>
+        <javafx.geometry.Insets top="25" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Text text="Simple Image Saver" 
+        GridPane.columnIndex="0" GridPane.rowIndex="0"
+        GridPane.columnSpan="2" GridPane.rowSpan="1"
+        style="-fx-font: NORMAL 20 Tahoma;" /> 
+ 
+    <Label text="Input file path:" 
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="pathId" prefWidth="250"  
+        text="C:\*.jpg"
+        GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+<!--    <Label text="File ends with:" 
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>-->
+<!--    <TextField fx:id="endId"    text=".pdf"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+    <Button text="Find and save" onAction="#btnFindClick"  
+        GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Button text="Find in DB" onAction="#btnFindInDBClick"  
+        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button text="Display selected image" onAction="#btnSelectImageClick"  
+        GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Button text="Delete selected image" onAction="#btnDeleteImageClick"  
+        GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    
+<!--    <HBox  GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button text="Cancel" onAction="#btnCancelClick"/>
+      <ProgressBar fx:id="barId" minWidth="200" 
+                   progress="0" translateX="100"/>
+    </HBox>-->
+    <ListView fx:id="listId"   minWidth="550" minHeight="250"
+              GridPane.columnIndex="0" GridPane.rowIndex="4"
+              GridPane.columnSpan="2" >
+    </ListView>
+    
+    <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="550.0"
+              GridPane.columnIndex="0" GridPane.rowIndex="5"
+              GridPane.columnSpan="2" GridPane.rowSpan="1" >
+        
+    </ImageView>
+</GridPane>
